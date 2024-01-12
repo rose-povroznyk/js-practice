@@ -282,3 +282,240 @@
 //   return initials;
 // }
 // console.log(getInitials('John', 'Smith'));
+
+// Написати функцію, яка знаходить найбільше значення серед елементів масиву.
+// const newArr = [3, 6, 8, 2, 5, 3, 1];
+// function findLargestNumber(arr) {
+//   let largestNumber = arr[0];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] > largestNumber) {
+//       largestNumber = arr[i];
+//     }
+//   }
+//   return largestNumber;
+// }
+// console.log(findLargestNumber(newArr));
+
+// Написати функцію, яка знаходить середнє арифметичне
+
+// function findAverage(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum / arr.length;
+// }
+
+// console.log(findAverage(newArr));
+
+// Задача: у об'єкті user вивести назви всіх ключів і властивості
+
+// for (let key in user) {
+//   console.log(`${key} ---> ${user[key]}`);
+
+// Задача: у нас є об'єкт з зарплатами по всіх відділах. Написати функцію, яка повертає загальну суму, витрачену на зарплатню всіх відділів
+
+// const departmentSalaryInCompany1 = {
+//   HR: 120000,
+//   development: 5500000,
+//   PR: 50000,
+//   marketing: 120000,
+//   assistant: undefined,
+// };
+
+//   function sumSalary(salaryObject) {
+//     let sum = 0;
+
+//     for(let key in salaryObject) {
+//       if(typeof salaryObject[key] === 'number') {
+//         sum += salaryObject[key];
+//       }
+//     }
+
+//     return sum;
+//   }
+
+// ввести з консолі n елементів масиву
+// function inputArray(n) {
+//   const arr = [];
+//   for (let i = 0; i < n; i++) {
+//     arr.push(Number(prompt('input item')));
+//   }
+//   return arr;
+// }
+// console.log(inputArray(5));
+
+/////////////////////////////////////////////////////////////////////
+// Function isOdd
+// function isOdd(item) {
+//   return item % 2 === 1;
+// }
+
+/////////////////////////////////////////////////////////////////////
+//Arguments
+// function f() {
+//   console.log(arguments);
+// }
+/////////////////////////////////////////////////////////////////////
+// Функція для розрахунку добутку необмеженої кількості переданих аргументів
+// function multiplication() {
+//   let result = 1;
+//   for (let i = 0; i < arguments.length; i++) {
+//     result *= arguments[i];
+//   }
+//   return result;
+// }
+// console.log(multiplication(5, 3, 2));
+/////////////////////////////////////////////////////////////////////
+// Функція виду
+// calculate(operation, operand1, operand2, ,,,. operandN),
+// де operation - операція, яка має бути виконана над операндами
+
+// function calculate() {
+//   let sum = 0;
+//   let multiply = 1;
+
+//   if (arguments[0] === '+') {
+//     for (let i = 1; i < arguments.length; i++) {
+//       sum += arguments[i];
+//     }
+//     return sum;
+//   } else if (arguments[0] === '*') {
+//     for (let i = 1; i < arguments.length; i++) {
+//       multiply *= arguments[i];
+//     }
+//     return multiply;
+//   }
+// }
+
+// console.log(calculate('*', 5, 10, 10));
+
+///////////////////////////////////////////////////////////////
+// Rest parameteres
+
+// function sumNumber(...args) {
+//   const sum = args.reduce(function (accumulator, currentVallue) {
+//     return accumulator + currentVallue;
+//   }, 0);
+
+//   return sum;
+// }
+
+// sumNumber(1, 5, 10);
+
+// console.log(calculate.arguments[0]);
+/////////////////////////////////////////////////////////////////////
+//Function arrow isAdult
+// const isAdult = (age) => age >= 18;
+// console.log(isAdult(18));
+/////////////////////////////////////////////////////////////////////
+// Функція, яка запакує обєкт
+// const packObject = (firstName, lastName) => {
+//   return { firstName: firstName, lastName: lastName };
+// };
+// console.log(packObject('John', 'Balon'));
+/////////////////////////////////////////////////////////////////////
+//Function arrow isEven
+// const isEven = (num) => num % 2 === 0;
+// console.log(isEven(5));
+/////////////////////////////////////////////////////////////////////
+
+//Function greeting
+// const greetingOptions = {
+//   en: 'Hello',
+//   ua: 'Vitajy',
+//   esp: 'Hola',
+// };
+// const greeting = (lang, userName) => `${greetingOptions[lang]}, ${userName}`;
+// console.log(greeting('esp', ''));
+
+///////////////////////////////////////////////////////////////////
+//Function-constructor for creating phone objects
+
+// function Phone(id, brand, model, makeYear, color, isNfc, price) {
+//   this.id = id;
+//   this.brand = brand;
+//   this.model = model;
+//   this.makeYear = makeYear;
+//   this.color = color;
+//   this.isNfc = isNfc;
+//   this.price = price;
+// }
+
+// const phones = [];
+// const phonesCount = 100;
+
+// Loop for creating array phones with 100 phone objects
+
+// for (let i = 0; i < phonesCount; i++) {
+//   const phone = new Phone(
+//     i,
+//     Math.random() < 0.5 ? 'Samsung' : 'IPhone',
+//     `Series ${Math.trunc(Math.random() * 20)}`,
+//     2015 + Math.trunc(Math.random() * 8),
+//     Math.random() > 0.5 ? 'white' : 'black',
+//     Math.random() > 0.5,
+//     5000 + Math.trunc(Math.random() * 7000)
+//   );
+//   phones.push(phone);
+// }
+// console.dir(phones);
+// Відібрати телефони з ціною вище 8000
+// const phonePriceMoreThan8000 = phones.filter((item) => item.price > 8000);
+// Відібрати телефони 2018 року випуску (filter)
+// const phoneMakeYear2018 = phones.filter((item) => item.makeYear === 2018);
+// Вивести бренд, модель і рік кожного телефону (forEach)
+// phones.forEach( (item) => console.log(`${item.brand}: ${item.model} ${item.makeYear}`))
+// Видалити телефон з id 10(findIndex + splice)
+// const id10 = phones.findIndex((item) => item.id === 10);
+// phones.splice(id10, 1);
+// Вивести бренд+модель телефонів з nfc (можна через filter + forEach)
+// phones.forEach((value) => {
+//   if (value.isNfc === true) {
+//     console.log(`${value.brand}: ${value.model}`);
+//   }
+// });
+// Вивести дані про моделі еппл 2016 року
+// phones.forEach(item => item.makeYear === 2016 && item.brand === 'IPhone') {
+//     console.log(value);
+//   }
+// });
+
+// Отримати масив з телефонами, ціна яких нижча 5% від вихідної
+// const mapPhones = phones.map(function (item) {
+//   const i = { ...item }; // Make new objext for data
+//   i.price = Math.trunc(i.price * 0.95);
+//   return i; // this new object with new price will be in our const
+// });
+///////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////
+// Функція призначена для знаходження двох ідентичних сусідніх чисел у масиві.
+// function findTwoIdentNumber(arr) {
+//   let isFind;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === arr[i + 1]) {
+//       isFind = true;
+//       break;
+//     } else if (arr[i] !== arr[i + 1]) {
+//       isFind = false;
+//     }
+//   }
+//   return isFind;
+// }
+
+// function isDoubleElement(array) {
+//   for (let i = 0; i < array.length - 1; i++) {
+//     if (array[i] === array[i + 1]) {
+//       return true;
+//     }
+//   }
+//   return false;
+// }
+
+//////////////////////!!!!!!!!!!!!!
+// function saySomething(howToSay, whatToSay) {
+//   howToSay(whatToSay);
+// }
+// saySomething(alert, 'Hello, user');
+// saySomething(console.log, 'hiiii');
