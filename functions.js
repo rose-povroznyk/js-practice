@@ -519,3 +519,125 @@
 // }
 // saySomething(alert, 'Hello, user');
 // saySomething(console.log, 'hiiii');
+
+/////////////////////Функція отримання суми з переданих аргументів
+// function sum() {
+//     const arrayArgs = Array.from(arguments);
+//     let sum = 0;
+
+//     for (let i = 0; i < arrayArgs.length; i++) {
+//       sum += arrayArgs[i];
+//     }
+//     return sum;
+//   }
+
+//   console.log(sum(2, 6, 3, 4, 5, 6, 7, 8));
+
+// function compareFunction(a, b) {
+//   //для зростання
+//   if (b > a) {
+//     return -1;
+//   } else if (a > b) {
+//     return 1;
+//   } else {
+//     return 0;
+//   }
+// }
+
+////////////////////////////////////////////////////////
+// // function capitalizeWords(str) {
+// //   let words = str.split(' ');
+// //   console.log(words);
+// //   for (let i = 0; i < words.length; i++) {
+// //     words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+// //   }
+// //   return words.join(' ');
+// // }
+
+// // capitalizeWords('word, flower, third');
+
+// // function checkSpam(str) {
+// //   let checkstr = str.toLowerCase();
+// //   console.log(checkstr.includes('via'));
+
+// //   if (checkstr.includes('viagra') || checkstr.includes('xxx')) {
+// //     return true;
+// //   } else {
+// //     return false;
+// //   }
+// // }
+
+// // checkSpam('by ViAgRa now');
+
+// // function palindrom(str) {
+// //   const reverseStr = Array.from(str.toLowerCase).reverse().join('');
+// //   console.log(reverseStr);
+// // }
+// // palindrom('ann');
+
+// ////////////////// Рекурсивна функція на знаходження факторіалу
+
+// function findFactorial(num) {
+//   if (num === 0 || num === 1) {
+//     return 1;
+//   } else {
+//     return (num *= findFactorial(num - 1));
+//   }
+// }
+
+// console.log(findFactorial(5));
+
+// ////////////////// Рекурсивна функція на знаходження послідовності чисел Фібоначчі
+
+// function recursiveFibonacciGenerator(num) {
+//   if (num === 1) {
+//     return [0];
+//   } else if (num === 2) {
+//     return [0, 1];
+//   } else {
+//     let previousNum = recursiveFibonacciGenerator(num - 1);
+//     let nextNum =
+//       previousNum[previousNum.length - 1] + previousNum[previousNum.length - 2];
+//     return [...previousNum, nextNum]; //прийшлося гуглити, сама не додумалася(
+//   }
+// }
+
+// console.log(recursiveFibonacciGenerator(17));
+
+// ////////////////// Функція з циклом на знаходження послідовності чисел Фібоначчі
+// function fibonacciGenerator(n) {
+//   let output = [];
+
+//   if (n === 1) {
+//     output = [0];
+//   } else if (n === 2) {
+//     output = [0, 1];
+//   } else {
+//     output = [0, 1];
+//     for (let i = 2; i < n; i++) {
+//       output.push(output.at(-2) + output.at(-1));
+//     }
+//   }
+
+//   return output;
+// }
+
+// ///////////////////////// Нагуглений розв'язок
+// //////////////////Stackoverflow Fibonachii resolve
+// // function fibonacci(num) {
+// //   if (num < 2) {
+// //     return num;
+// //   } else {
+// //     return fibonacci(num - 1) + fibonacci(num - 2);
+// //   }
+// // }
+
+// // const nTerms = prompt('Enter the number of terms: ');
+
+// // if (nTerms <= 0) {
+// //   console.log('Enter a positive integer.');
+// // } else {
+// //   for (let i = 0; i < nTerms; i++) {
+// //     console.log(fibonacci(i));
+// //   }
+// // }

@@ -136,22 +136,23 @@ const newArrFromUsers = users.map((user) => {
   return newUser;
 });
 
-// function t() {
-//   arguments[0] = 'test value';
-//   arguments[1];
-//   console.log(arguments);
-// }
-// t(1, 2, 3, 4, 5);
-// console.dir(t);
+// const array = [5, 3, 9, 21, 5, 1, 2, 4];
+// // array.sort(compareFunction);
 
-function sum() {
-  const arrayArgs = Array.from(arguments);
-  let sum = 0;
+// const lettersArray = ['bbb', 'abb', 'aaa', 'aba'];
+// lettersArray.sort();
 
-  for (let i = 0; i < arrayArgs.length; i++) {
-    sum += arrayArgs[i];
-  }
-  return sum;
-}
+// const dogArr = [
+//   { nickname: 'Tuzik', color: 'black', weight: 3, age: 2 },
+//   { nickname: 'Dolly', color: 'white', weight: 5, age: 3 },
+//   { nickname: 'Fagot', color: 'black', weight: 15, age: 5 },
+//   { nickname: 'Stus', color: 'black', weight: 9, age: 1 },
+// ];
 
-console.log(sum(2, 6, 3, 4, 5, 6, 7, 8));
+// dogArr.sort((dog1, dog2) => dog2.weight - dog1.weight);
+
+// dogArr.sort((dog1, dog2) => dog2.age - dog1.age);
+
+// const filteredDogArr = dogArr.filter((dog) => dog.color === 'white');
+
+// const weightOfAllDogs = dogArr.reduce((accum, dog) => accum + dog.weight, 0);
