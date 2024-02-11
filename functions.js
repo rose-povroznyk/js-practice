@@ -641,3 +641,11 @@
 // //     console.log(fibonacci(i));
 // //   }
 // // }
+
+///Function translator
+function translate(engPhrase) {
+  return engPhrase
+    .split(' ')
+    .map((e) => (vocabulary.has(e) ? vocabulary.get(e) : e))
+    .join();
+}

@@ -575,3 +575,101 @@ function call(value, key, arr) {
 
 const arr = new MyArray();
 arr.push(1, 2, 3, 4, 5);
+
+/////////////////////Class Home Task Practice
+class Vehicle {
+  constructor(length, width, height, brand, model, manufactureDate) {
+    this.dimension = {
+      length: length,
+      width: width,
+      height: height,
+    };
+    this.brand = brand;
+    this.model = model;
+    this.manufactureDate = new Date(manufactureDate);
+  }
+
+  getFullInfo() {
+    return `Brand: ${this.brand}, model: ${
+      this.model
+    }, age: ${this.manufactureDate.getFullYear()}`;
+  }
+
+  getAge() {
+    return new Date().getFullYear() - this.manufactureDate.getFullYear();
+  }
+}
+
+const car = new Vehicle(55, 66, 78, 'Toyouta', 'fdf', '02/12/2004');
+
+class PassengerTransport extends Vehicle {
+  constructor(
+    length,
+    width,
+    height,
+    brand,
+    model,
+    manufactureDate,
+    passengerLimit,
+    passengerCount
+  ) {
+    super(length, width, height, brand, model, manufactureDate);
+    this.passengerLimit = passengerLimit;
+    this.passengerCount = passengerCount;
+  }
+
+  addPasenger() {
+    if (this.passengerCount < this.passengerLimit) {
+      return ++this.passengerCount;
+    } else {
+      return 'No free place';
+    }
+  }
+
+  getFullInfo() {
+    return `Brand: ${this.brand}, model: ${
+      this.model
+    }, age: ${this.manufactureDate.getFullYear()}, seats: ${
+      this.passengerLimit
+    }`;
+  }
+}
+
+const car2 = new PassengerTransport(
+  55,
+  66,
+  78,
+  'Toyouta',
+  'fdf',
+  '02/12/2004',
+  18,
+  15
+);
+
+class FreightTransport extends Vehicle {
+  constructor(length, width, height, brand, model, manufactureDate, capacity) {
+    super(length, width, height, brand, model, manufactureDate);
+    this.capacity = capacity;
+  }
+
+  checkLoadingPossibility(weight) {
+    return this.capacity > weight;
+  }
+
+  getFullInfo() {
+    return `Brand: ${this.brand}, model: ${
+      this.model
+    }, age: ${this.manufactureDate.getFullYear()}, capacity: ${this.capacity}`;
+  }
+}
+
+const car3 = new FreightTransport(
+  55,
+  66,
+  78,
+  'Toyouta',
+  'fdf',
+  '02/12/2004',
+  5000
+);
+/////////////////////////////////////////
