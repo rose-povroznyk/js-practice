@@ -156,3 +156,56 @@ const newArrFromUsers = users.map((user) => {
 // const filteredDogArr = dogArr.filter((dog) => dog.color === 'white');
 
 // const weightOfAllDogs = dogArr.reduce((accum, dog) => accum + dog.weight, 0);
+
+/////////////////////////////////////////////////////////////
+const usersWithMessages2 = [
+  { id: 1, name: 'Test1', message: 'hello', date: new Date() },
+  { id: 1, name: 'Test1', message: 'how are you', date: new Date() },
+  { id: 2, name: 'Test2', message: 'hi', date: new Date() },
+  { id: 2, name: 'Test2', message: 'fine', date: new Date() },
+];
+
+const users2 = [];
+
+usersWithMessages2.forEach((um) => {
+  if (!users2.find((u) => um.id === u.id)) {
+    users2.push({ id: um.id, name: um.name });
+  }
+});
+
+const messages22 = usersWithMessages2.map((um) => ({
+  message: um.message,
+  date: um.date,
+}));
+//////////////////////////////////////////////////////////////////////////////
+
+///////////////Отримати масив марок телефонів
+
+const users55 = [
+  { name: 'Test0', brand: 'Iphone' },
+  { name: 'Test1', brand: 'Samsung' },
+  { name: 'Test2', brand: 'Iphone' },
+  { name: 'Test3', brand: 'Xiaomi' },
+  { name: 'Test4', brand: 'Samsung' },
+  { name: 'Test5', brand: 'Xiaomi' },
+  { name: 'Test6', brand: 'Iphone' },
+];
+
+const brands = users55.map((u) => {
+  return u.brand;
+});
+
+const brands2 = [
+  ...new Set(
+    users55.map((u) => {
+      return u.brand;
+    })
+  ),
+];
+
+usersWithPhones = {};
+
+brands.forEach((b) => {
+  usersWithPhones[b] = users55.filter((u) => b === u.brand).map((u) => u.name);
+});
+//////////////////////////////////////////////////////////////////
